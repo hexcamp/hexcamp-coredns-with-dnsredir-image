@@ -3,6 +3,10 @@ FROM coredns/coredns:1.11.1 AS coredns
 # runtime container
 FROM debian:11 AS runtime
 
+RUN apt-get update
+RUN apt-get dist-upgrade
+RUN apt-get install -y vim procps curl
+
 # set default logging, can be overridden
 ENV RUST_LOG=info
 
