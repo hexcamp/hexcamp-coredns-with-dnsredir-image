@@ -13,10 +13,12 @@ RUN go version
 RUN git clone https://github.com/coredns/coredns.git
 WORKDIR /coredns
 RUN grep -v 'file:file' plugin.cfg > plugin2.cfg
+RUN echo 'rrl:github.com/coredns/rrl/plugins/rrl' >> plugin2.cfg
 RUN echo 'dnsredir:github.com/leiless/dnsredir' >> plugin2.cfg
 RUN echo 'hexcamp:github.com/hexcamp/hexcamp-coredns-plugin' >> plugin2.cfg
 RUN echo 'file:file' >> plugin2.cfg
 RUN mv plugin2.cfg plugin.cfg
+RUN go get github.com/coredns/rrl/plugins/rrl
 RUN go get github.com/leiless/dnsredir
 RUN go get github.com/hexcamp/hexcamp-coredns-plugin@010912fc369024d7ef564316e32301eeedc1d879
 RUN go generate
