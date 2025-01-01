@@ -5,8 +5,8 @@ RUN apt-get update
 RUN apt-get dist-upgrade -y
 RUN apt-get install -y vim procps curl git build-essential
 
-RUN curl -O https://dl.google.com/go/go1.23.2.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.23.2.linux-amd64.tar.gz
+RUN curl -O https://dl.google.com/go/go1.23.2.linux-arm64.tar.gz
+RUN tar -C /usr/local -xzf go1.23.2.linux-arm64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin
 RUN go version
 
