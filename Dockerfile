@@ -40,3 +40,5 @@ COPY --from=coredns_build /coredns/coredns /coredns
 
 # set entrypoint
 ENTRYPOINT ["/bin/bash"]
+
+# force build
