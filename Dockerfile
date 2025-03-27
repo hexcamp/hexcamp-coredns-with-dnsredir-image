@@ -20,7 +20,7 @@ RUN echo 'file:file' >> plugin2.cfg
 RUN mv plugin2.cfg plugin.cfg
 RUN go get github.com/coredns/rrl/plugins/rrl
 RUN go get github.com/hexcamp/dnsredir@82118c3a5166871941ab312edb15ca65600f5a8b
-RUN go get github.com/hexcamp/hexcamp-coredns-plugin@c6f9285e887e68e00661dcf242137ffd592172ff
+RUN go get github.com/hexcamp/hexcamp-coredns-plugin@813f6f71e8bdf3621dac9926988e94c227998ce2
 RUN go generate
 RUN make CGO_ENABLED=1
 
