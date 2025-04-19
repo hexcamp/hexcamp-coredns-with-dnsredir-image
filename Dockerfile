@@ -3,7 +3,7 @@ FROM debian AS coredns_build
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install -y vim procps curl git build-essential libunbound-dev
+RUN apt-get install -y vim procps curl git build-essential unbound libunbound-dev
 
 RUN curl -O https://dl.google.com/go/go1.23.2.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.23.2.linux-amd64.tar.gz
@@ -31,7 +31,7 @@ FROM debian AS runtime
 
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install -y vim procps curl
+RUN apt-get install -y vim procps curl unbound libunbound-dev
 
 # set default logging, can be overridden
 ENV RUST_LOG=info
